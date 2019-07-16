@@ -2,8 +2,8 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
-    <!-- <Hello msg="blabla" @add-feature="addFeature"></!--> 
-    <Decor></Decor>
+    <Hello msg="blabla" @fooBar="addFeature" />
+    <!-- <Decor></Decor> -->
   </div>
 </template>
 
@@ -21,7 +21,7 @@ import Decor from "./components/Decor.vue";
   },
 })
 export default class App extends Vue {
-  addFeature(aaa){
+  addFeature(aaa: string){
     alert(aaa)
   }
 }

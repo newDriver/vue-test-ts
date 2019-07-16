@@ -80,8 +80,10 @@ export default class Hello extends Vue {
   }
 
   // 声明方法将来会加入到methods里面，除了生命周期函数
-  // 若不传参，则函数名就是事件名，转换为羊肉串写法
-  @Emit()
+  // 装饰器若不传参，则函数名就是事件名，转换为羊肉串写法
+  // 装饰器若传参，则参数是事件名，写什么就是什么不转换
+  // 返回值是自定义事件附加参数
+  @Emit('fooBar')
   addFeature(e: any) {
     // this.features.push({ id: this.features.length + 1, name: e.target.value });
     this.addFeatureAction(e.target.value)
