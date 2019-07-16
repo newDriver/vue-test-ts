@@ -35,7 +35,7 @@ function dong(target, name, descriptor) {
 }
 @isFoo
 class Foo {
-    @mua aaa: string;    
+    @mua aaa!: string;    
     constructor(){
         console.log('Foo构造函数');
     }
@@ -46,5 +46,6 @@ class Foo {
 }
 
 console.log(Foo.isFoo) // true
-// console.log(f.aaa); // mua~~
-// f.bar()
+const f = new Foo();
+console.log(f.aaa); // mua~~
+f.bar()
