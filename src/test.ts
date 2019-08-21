@@ -131,7 +131,7 @@ function dong(target: any, name: string, descriptor: any) {
       console.log('dong~~');
       baz.call(this, val);
   }
-  // return target
+  return descriptor;
 }
 // 属性装饰器
 function mua(target, name) {
