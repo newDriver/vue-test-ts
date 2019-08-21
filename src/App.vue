@@ -1,20 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
+    <!-- <Hello msg="something" @add-feature="dosomething" /> -->
+    <Decor msg="lalala"></Decor>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
+import Hello from "./components/Hello.vue";
+import Decor from "./components/Decor.vue";
+import { Feature } from "./components/Hello.vue";
 
 @Component({
   components: {
     HelloWorld,
-  },
+    Hello,
+    Decor
+  }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private dosomething(feature: Feature) {
+    alert(feature.name);
+  }
+}
 </script>
 
 <style>
