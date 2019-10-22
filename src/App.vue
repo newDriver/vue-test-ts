@@ -1,20 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"
+      @addFeature="onAddFeature"/>
+      <Decor></Decor>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
+import Decor from "./components/Decor.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    HelloWorld,Decor
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  onAddFeature(feature:any) {
+    alert('add:' + feature.name)
+  }
+}
 </script>
 
 <style>
